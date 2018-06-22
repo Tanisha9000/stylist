@@ -1,0 +1,80 @@
+page-addworkhistory {
+	form {
+        width:  100%;
+        float: left;
+
+        .date{
+                border-bottom: 1px solid #bcbcbc;
+
+                ion-label{
+                    color:#bcbcbc;
+                     padding-left: 10px;
+                }
+        	ion-row{
+                    padding-bottom: 4px;
+                    padding-top: 5px;
+        		.col{
+        		 display: flex;
+                 padding-left: 10px;
+        	}
+
+            ion-input{
+                .text-input{
+                        margin:0 !important;
+            }
+            }
+			 
+        	
+        }
+        	
+              }
+    }
+    .icn{
+        margin-bottom: -20px !important ; 
+    }
+     form > .list {
+         margin-bottom: 25px;
+         width:  100%;
+         float: left;
+        }
+    
+     form > .list > .item {
+        border-top: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    
+     form > .list > .item > .item-inner {
+        padding: 0;
+    }
+    
+     form > .list > .item > .item-inner .label {
+        text-transform: capitalize;
+        color: #b7b7b7;
+        padding: 0 10px;
+    }
+  
+    form .main_btn {
+        width: 55%;
+        height: 35px;
+        margin: 0 auto 15px;
+        float: none;
+        display: block;
+        background: #3FE0D0;
+        text-transform: capitalize;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .forgot{
+        width: 70%;
+        float: none;
+        margin: 0 auto;
+        display: block;
+        color: #556571;
+        letter-spacing: 1px;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+}

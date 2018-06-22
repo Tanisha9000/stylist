@@ -1,0 +1,45 @@
+<ion-header class="header_color">
+    <ion-navbar hideBackButton>
+        <button ion-button menuToggle style="display:block !important;">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>work history</ion-title>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+        <div *ngIf = "worklist.length > 0">
+    <div class="main_home_box" *ngFor = "let item of worklist;let i = index">
+        <ion-list>
+            <ion-item no-lines>
+                <ion-thumbnail item-start (click)="view(item.restdata.id)"> 
+                    <img [src]="item.img">
+                </ion-thumbnail>
+                      <h2>{{item.restdata.salon_name}} <button *ngIf ="!bit" (click)="deletework(item.restdata.id,i)"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button></h2>
+                <p class="position_box" (click)="view(item.restdata.id)">Position held: <span>{{item.restdata.role}}</span></p>
+                <div class="from" (click)="view(item.restdata.id)">
+                        <div class="box0"><p class="date">From:</p> <span>{{item.restdata.start_date}}</span></div>
+                        <div class="box0"><p class="mrleft">To:</p> <span >{{item.restdata.end_date}}</span></div>
+                </div>
+                <p class="{{item.restdata.change}}" >{{item.restdata.description}}</p>
+                <button *ngIf="item.restdata.buttonn != 0" class="readmore" ion-button (tap)="read(item.restdata.change,i)">Read More<span class="circle"><ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon></span>
+                </button>
+
+            </ion-item>
+        </ion-list>    
+       
+    </div>
+        </div>
+    <div *ngIf ="!bit" class="circleplus" (click)="addworkhistory()">
+            <ion-icon ios="ios-add" md="md-add"></ion-icon>
+        </div>
+
+
+</ion-content>
+
+<!--<ion-footer class="footer">
+    <ion-toolbar>
+       
+    </ion-toolbar>
+</ion-footer>-->

@@ -1,0 +1,91 @@
+<ion-header class="header_color">
+    <ion-navbar hideBackButton>
+        <button ion-button menuToggle style="display:block !important;">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Edit jobs</ion-title>     
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="top">  
+    </div>
+    <div class="bottom">
+        <div class="box_btm">
+            <div class="box_btm_inner">
+                <form #heroForm="ngForm"  novalidate>
+                    <ion-list> 
+                        <ion-item>
+                            <ion-label stacked>Position</ion-label>
+                            <ion-select placeholder="Select position" [(ngModel)]="dataa.profess" name="profess" #profess='ngModel' required>
+                                <ion-option *ngFor="let pro of profession" [value]="pro.name">{{pro.name}}</ion-option>
+                            </ion-select>
+
+                        </ion-item>
+                        <ion-item>
+                            <ion-label stacked>Qualifications</ion-label>
+                            <ion-textarea class="quali" placeholder="Enter Qualifications" [(ngModel)]="dataa.quali" name="quali" #quali='ngModel' required></ion-textarea>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Work experience</ion-label>
+                            <ion-select placeholder="Select work experience" [(ngModel)]="dataa.work" name="work" #work='ngModel' required>
+                                <ion-option value="0-2">0-2 years</ion-option>
+                                <ion-option value="3-5">3-5 years</ion-option>
+                                <ion-option value="6-10">6-10 years</ion-option>
+                                <ion-option value="11-15">11-15 years</ion-option>
+                                <ion-option value="16+">16+ years</ion-option>
+                            </ion-select>
+                        </ion-item>
+                        <!-- <div *ngIf="work.errors && (work.dirty || work.touched)" class="errormsg alert alert-danger">
+                          <div [hidden]="!work.errors.required" class="alert alert-danger">
+                            Please select work experience
+                          </div>
+                        </div> -->
+
+                        <ion-item>
+                            <ion-label stacked>Location</ion-label>
+                            <ion-select placeholder="Select location" [(ngModel)]="dataa.loc" name="loc" #loc='ngModel' required>
+                                <ion-option *ngFor="let c of city" [value]="c" selected>{{c.name}}</ion-option>
+                                <!--<ion-option value="chd">Chandigarh</ion-option>-->
+                            </ion-select>
+                        </ion-item>
+                        
+                        <ion-item>
+                            <ion-label stacked>Zip code</ion-label>
+                            <ion-input type="text" placeholder="Enter Zip code" [(ngModel)]="dataa.zip" name="zip" #zip='ngModel' required></ion-input>
+                        </ion-item>
+                        <!-- <div *ngIf="loc.errors && (loc.dirty || loc.touched)" class="errormsg alert alert-danger">
+                          <div [hidden]="!loc.errors.required" class="alert alert-danger">
+                            Please select location
+                          </div>
+                        </div> -->
+
+                        <div class="preference">
+                            <h3 >Pay Type</h3>
+                            <ion-item>
+                                <ion-label>Booth Rent</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.booth" (click)="check_value('booth',check.booth)" name="booth"></ion-checkbox>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Salary</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.salary" (click)="check_value('salary',check.salary)" name="salary"></ion-checkbox>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Commission</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.comm" (click)="check_value('comm',check.comm)" name="comm"></ion-checkbox>
+                            </ion-item>
+                        </div>  
+                    </ion-list>  
+                </form>
+            </div>
+        </div>
+    </div>
+</ion-content> 
+
+<ion-footer class="footer">
+    <ion-toolbar>
+        <button type='submit' class="chngebtn" ion-button clear [disabled]="!heroForm.valid" (tap)="submitt(heroForm)">Update job</button>
+        <!-- <ion-title>Post job</ion-title> -->
+    </ion-toolbar>
+</ion-footer>

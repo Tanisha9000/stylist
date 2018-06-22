@@ -1,0 +1,37 @@
+<ion-header class="header_color">
+
+    <ion-navbar>
+        <ion-title>forgot password</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div class="logo">        
+        <img src="assets/imgs/mylogo.png">
+    </div>  
+    <div class="box_btm">  
+        <div class="box_btm_inner">
+            <form #heroForm="ngForm"  novalidate>
+                <ion-list>              
+                    <ion-item>
+                        <ion-label stacked> email</ion-label>
+                        <ion-input type="email" placeholder="Enter email" [(ngModel)]="data.email" name="email" #email='ngModel' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></ion-input>
+                    </ion-item> 
+                    <div *ngIf="email.errors && (email.dirty || email.touched)" class="errormsg alert alert-danger">
+                        <div [hidden]="!email.errors.required" class="alert alert-danger">
+                            Please enter your email
+                        </div>
+                    </div> 
+                    <div *ngIf="email.errors && (email.dirty || email.touched)" class="errormsg alert alert-danger">
+                        <div [hidden]="!email.errors.pattern" class="alert alert-danger">
+                            Please enter a valid email address
+                        </div>
+                    </div>
+                </ion-list>
+                <button ion-button class="main_btn" type='submit' [disabled]="!heroForm.valid" (tap)="forgot(heroForm)">submit</button>
+            </form>
+        </div> 
+    </div>
+
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-menu [content]="content">
+  <ion-header class="menubg">
+    <ion-toolbar>
+        <ion-header class="menubg">
+      <ion-toolbar >
+          <ion-list no-lines >
+        <ion-item no-lines>
+          <ion-avatar item-start>
+            <img [src] ="userimage">
+          </ion-avatar>
+          <h2>{{name}}</h2>    
+        </ion-item>
+      </ion-list>
+      </ion-toolbar>
+    </ion-header>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose color="black" ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                    <ion-icon><img class="side" src="{{p.icon}}"></ion-icon>
+                {{p.title}}
+      </button>
+    </ion-list>
+<!--    <ion-list *ngIf='role == "salon" '>
+      <button menuClose color="black" ion-item *ngFor="let q of salonpages" (click)="openPage(q)">
+                    <ion-icon><img class="side" src="{{q.icon}}"></ion-icon>
+                {{q.title}}
+      </button>
+    </ion-list>  -->
+      
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

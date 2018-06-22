@@ -1,0 +1,89 @@
+skill<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button ion-button menuToggle style="display:block !important;">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>profile</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <div class="top">
+        <img [src]="vendorimage">
+
+    </div>
+
+    <div class="bottom">
+        <div class="box_btm">
+            <div class="box_btm_inner mrbotm">
+                <div class="editprofile" (click)="editprofile()">  
+                    <ion-icon ios="ios-create-outline" md="md-create"></ion-icon>
+                </div>
+                <form [hidden]='role != "stylist" '>
+                    <h2>Name: <span>{{ownername}}</span></h2>
+                    <h2>Address: <span>{{address}}</span></h2>
+                    <!--<h2>City: <span>{{city}}</span></h2>-->
+                    <h2>State:<span>{{state}}</span></h2>
+                    <h2>Zip:<span>{{zip}}</span></h2>  
+                    <h2>Email: <span>{{email}}</span></h2>
+                    <h2>Phone: <span>{{phone}}</span></h2>
+                    <h2>Birth date: <span>{{dob}}</span></h2>
+                    <h2>Profession: <span>{{profession}}</span></h2>
+                    <h2>Languages spoken: <span>{{language}}</span></h2>                    
+<!--                    <ul *ngFor="let ll of language">
+                        <li>{{ll}}</li>
+                    </ul>-->
+                    <h2>Location preference: <span>{{location}}</span></h2>
+                    <h2>Work experience: <span>{{exp}}</span></h2>                  
+                    <h2>Pay preference: </h2>
+                    <ul *ngFor="let py of paypref">
+                        <li>{{py}}</li>
+                    </ul>
+                    <h2>Skills: </h2>
+                    <ul *ngFor="let sk of skills">
+                        <li>{{sk}}</li>  
+                    </ul> 
+                    <h2>Licensed: <span>{{licensed}}</span></h2>
+                    <h2 *ngIf = "field == 0">State of license: <span>{{licensestate}}</span></h2>
+                    <h2 *ngIf = "field == 0">License type: <span>{{licensetype}}</span></h2>
+                    
+                    <h2 *ngIf = "field == 0">License number: <span>{{licenseno}}</span></h2>
+                    <h2>About me:</h2>
+                    <p>{{aboutus}}</p>
+                </form>
+
+                <form [hidden] = 'role != "salon" '>
+                    <h2>Business name: <span>{{businessname}}</span></h2>
+                    <h2>Owner's first name: <span>{{ownerfirstname}}</span></h2>
+                    <h2>Owner's last name: <span>{{ownerlastname}}</span></h2>
+                    <h2>Business address: <span>{{address}}</span></h2>
+                    <h2>State : <span>{{state}}</span></h2>
+                    <!--<h2>City : <span>{{location}}</span></h2>-->
+                    <h2>Zip : <span>{{zip}}</span></h2>
+                    <h2>Email address: <span>{{email}}</span></h2>
+                    <h2>Phone: <span>{{phone}}</span></h2>
+                    <h2>Experience in business: <span>{{experience}}</span></h2>
+                    <h2>Pay type: </h2>
+                    <ul *ngFor="let py of paypref">
+                        <li>{{py}}</li>
+                    </ul> 
+                    <!--<h2>License type: <span>{{licensetype}}</span></h2>-->
+                    <h2>State of license:<span>{{licensestate}}</span></h2>
+                    <h2>About our salon:</h2>
+                    <p>{{aboutus}}</p>
+                </form>
+            </div>
+        </div>
+    </div>  
+    <!--    <div class="bottom" >
+            <div class="box_btm">
+                <div class="box_btm_inner mrbotm">
+                </div>
+    
+            </div>
+    
+        </div>    -->
+</ion-content>

@@ -1,0 +1,95 @@
+page-forgot {
+
+    .create_now {
+        width: 100%;
+        float: left;
+        color: #353951;
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    		.logo {
+    width: 110px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #b2b1b1;
+    height: 110px;
+    margin: 30px auto 0;
+    img {
+            width: 100%;
+    padding: 8px;
+    height: 100%;
+  }
+	}
+
+    .box_btm {
+        width:  90%;
+        margin:0 auto;
+        float: none;
+        display: block;
+
+        img {
+       width: 96px;
+        margin: 25px auto;
+        display: block;
+        border-radius: 50%;
+        border: 2px solid #353951;
+        height: 96px;
+        }
+    
+    form {
+        width:  100%;
+        float: left;
+    }
+    
+     form > .list {
+         margin-bottom: 25px;
+         width:  100%;
+         float: left;
+        }
+    
+     form > .list > .item {
+        border-top: none;
+        padding: 0;
+    }
+    
+     form > .list > .item > .item-inner {
+        padding: 0;
+    }
+    
+     form > .list > .item > .item-inner .label {
+        text-transform: capitalize;
+        color: #b7b7b7;
+        padding: 0 15px;
+    }
+    form > .list > .item > .item-inner input {
+        padding: 0 15px;
+        color: #556571;
+        font-size: 15px;
+    }
+    form .main_btn {
+        width: 55%;
+        height: 35px;
+        margin: 0 auto 15px;
+        float: none;
+        display: block;
+        background: #353951;
+        text-transform: capitalize;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .forgot{
+        width: 70%;
+        float: none;
+        margin: 0 auto;
+        display: block;
+        color: #556571;
+        letter-spacing: 1px;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+}
+
+}

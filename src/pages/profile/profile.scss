@@ -1,0 +1,132 @@
+page-profile {
+.back-button-ios{
+    color: #000;
+}
+	 .top{
+        width: 100%;
+        float: left;
+        height: 38vh;
+        background-color:#353951; 
+        background-image: url(../assets/imgs/bg.png);
+        background-repeat: repeat;
+        background-size: cover;
+        background-position: 0;
+    img {
+               width: 85px;
+            height: 85px;
+            margin: 25px auto;
+            display: block;
+            border-radius: 50%;
+    }
+     h4 {
+        width:  100%;
+        float:  left;
+        text-align:  center;
+        color:  #fff;
+        margin: 10px 0;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+}
+    .bottom{
+        width: 100%;
+        float: left;
+        height: 50vh;
+        position: relative;
+
+        .create_now{
+            width: 100%;
+            float: left;
+            color: #353951;
+        
+        a{
+            color: #353951;
+            text-decoration: underline;
+            text-transform: capitalize;
+        }
+
+        }
+    }
+    .box_btm_inner{
+        border-radius:  8px;
+        box-shadow: 0px 4px 9px 0px #e6dada;
+        overflow: hidden;
+        background:  #fff;
+        padding: 20px 19px;
+        
+         .editprofile{
+                                        width: 25px;
+                                    height: 25px;
+				    background-color: #3FE0D0;
+				    border-radius: 50%;
+				    /* text-align: center; */
+				    display: inline-block;
+				    justify-content: center;
+				    display: flex;
+				    align-items: center;
+				       right: 47px;
+                                    bottom: 200px;
+                                    position: fixed;
+                                    z-index: 99;
+				    ion-icon{
+				    	color:#fff;
+				    }
+        }
+    }
+
+    .box_btm {
+        width:  90%;
+        position:  absolute;
+        left:  0;
+        margin: auto;
+        right: 0;
+        top: -80px;
+    
+    form {
+    	position: relative;
+        width:  100%;
+        float: left;
+
+        h2{
+        font-size: 12px;
+    	color: #000;
+    	display:block;
+
+    	span{
+    	color: #a2a2a2;
+   	 font-size: 11px !important;
+         text-transform: capitalize;
+    	}
+        }
+        p{
+        font-size: 11px !important;
+	    font-weight: normal;
+	    color: #a2a2a2;
+        }
+        ul{
+        margin:0;
+        padding:0;
+            padding-left: 14px;
+
+            li{
+            color: #c0aeae;
+                font-size: 12px;
+         text-transform: capitalize;
+            }
+        }
+        ion-select{
+        display: inline-flex;
+            position: absolute;
+            padding: 0px 12px 0 12px;
+        }
+
+       
+    }
+    
+    
+
+}
+.mrbotm{
+    margin-bottom: 20px;
+}
+}

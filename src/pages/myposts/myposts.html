@@ -1,0 +1,51 @@
+<ion-header class="header_color">
+    <ion-navbar hideBackButton>
+        <button ion-button menuToggle style="display:block !important;">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>My Jobs</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+        <ion-refresher (ionRefresh)="doRefresh($event)">
+                <ion-refresher-content
+                  pullingIcon="arrow-dropdown"
+                  pullingText="Pull to refresh"
+                  refreshingSpinner="circles"
+                  refreshingText="Refreshing...">
+                </ion-refresher-content>
+        </ion-refresher>
+     <!--<div class="headinghome">{{homee}}</div>-->
+    <div>
+     
+    <div class="main_home_box" *ngFor = "let item of allsalons;let i = index">
+        <ion-list>
+            <ion-item no-lines>
+                <ion-thumbnail item-start>
+                    <img [src]="item.url">
+                </ion-thumbnail>
+                <h2>{{item.restData.jobtitle}} 
+                    <span>
+                    <ion-icon (click)="edit(item.restData.id)" ios="ios-create" md="md-create"></ion-icon>
+                    <ion-icon style="padding: 0 0 0 10px" (click)="delete(item.restData.id)" ios="ios-trash" md="md-trash"></ion-icon>
+                </span>
+                </h2>
+                <p>Location: 
+                    <span *ngIf = 'item.restData.location'>{{item.restData.location}}</span>
+                    <span *ngIf = '!item.restData.location'>No info</span>
+                </p>
+                <p>Qualification:
+                    <span *ngIf = 'item.restData.qualification'>{{item.restData.qualification}}</span>
+                    <span *ngIf = '!item.restData.qualification'>No info</span>
+                </p>
+                <p>Date: <span>{{item.created}}</span></p>
+                <p *ngIf="item.restData.experience" >Exp: <span>{{item.restData.experience}} years</span></p>
+                <p *ngIf="!item.restData.experience">Exp: <span> No info </span></p>
+                
+            </ion-item>
+        </ion-list>    
+    </div>
+    </div>
+      <p *ngIf="allsalons.length == 0" class="message"><span> You have not posted any jobs yet.</span></p>
+</ion-content>

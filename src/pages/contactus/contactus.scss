@@ -1,0 +1,60 @@
+page-contactus {
+    
+	.logo {
+    width: 110px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #b2b1b1;
+    height: 110px;
+    margin: 0 auto;
+    img {
+            width: 100%;
+    padding: 8px;
+    height: 100%;
+  }
+	}
+	
+  
+.abc{
+    height:100vh;
+    .label{
+        color: #b7b7b7;
+    font-weight: 400;
+    font-size: 13px !important;
+    }
+    input {
+     margin-left: 0;
+    width:100%;
+    padding: 0 !important;
+    color: #556571;
+    font-size: 13px;
+    margin-top: 2px;
+    text-transform: unset;
+    margin-bottom: 0px;
+    }
+}
+.abc .item {
+    padding: 0;
+}
+
+.abc .item input {
+    margin-top:  2px;
+    margin-bottom: 4px;
+}
+.scroll-content{
+    margin-top: 56px;
+}
+.footer{
+    .toolbar-content{
+    height: 40px;
+}
+button{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-size: 15px;
+    color: #fff;
+}
+}
+
+}

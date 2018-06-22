@@ -1,0 +1,61 @@
+<ion-header class="header_color">
+    <ion-navbar>
+        <ion-title>apply form</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form #heroForm="ngForm"  novalidate>  
+        <ion-list> 
+            <!-- <ion-item>
+                    <ion-label stacked>select position</ion-label>
+                      <ion-select>
+                        <ion-option value="one" selected>1</ion-option>
+                        <ion-option value="Barber">Barber</ion-option> 
+                      </ion-select>
+          </ion-item> -->
+<!--
+            <ion-item>
+                <ion-label stacked>Pay preference</ion-label>
+                <ion-input type="text" placeholder="Enter Pay Type" [(ngModel)]="data.pay" name="pay" #pay='ngModel' required></ion-input>
+            </ion-item>-->
+            <ion-item>
+                <ion-label stacked>Pay Type</ion-label>
+                <ion-select placeholder="Select Pay Type" [(ngModel)]="data.pay" name="pay" #pay='ngModel' required>
+                    <ion-option *ngFor="let c of paypref" [value]="c" selected>{{c}}</ion-option>
+                </ion-select>
+            </ion-item>  
+            <!--                <div *ngIf="pay.errors && (pay.dirty || pay.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!pay.errors.required" class="alert alert-danger">
+                              This field is required!
+                            </div>
+                            </div>-->
+
+            <ion-item>
+                <ion-label stacked> Available Start date</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" placeholder="DD/MM/YYYY"  min={{myDate}} max="2030-10-31" [(ngModel)]="data.startdate" name="startdate" #startdate='ngModel' required></ion-datetime>
+            </ion-item>
+            <!--                  <div *ngIf="startdate.errors && (startdate.dirty || startdate.touched)" class="errormsg alert alert-danger">
+                                  <div [hidden]="!startdate.errors.required" class="alert alert-danger">
+                                    Select particular date!
+                                  </div>
+                              </div>-->
+
+<!--            <ion-item>
+                <ion-label stacked>Available start date</ion-label>
+                <ion-input type="text" placeholder="Enter availability" [(ngModel)]="data.available" name="available" #available='ngModel' required></ion-input>
+            </ion-item>-->
+            
+            <ion-item>
+                <ion-label stacked>Other info</ion-label>
+                <ion-input type="text" placeholder="(Add any additional comments)" [(ngModel)]="data.otherinfo" name="otherinfo"></ion-input>
+            </ion-item>
+            <!--                  <div *ngIf="available.errors && (available.dirty || available.touched)" class="errormsg alert alert-danger">
+                                  <div [hidden]="!available.errors.required" class="alert alert-danger">
+                                    Select availability like days when you are available!
+                                  </div>
+                              </div>-->
+        </ion-list>
+        <button ion-button class="main_btn" type='submit' [disabled]="!heroForm.valid" (tap)="submit(heroForm)">submit</button> 
+    </form>      
+</ion-content>

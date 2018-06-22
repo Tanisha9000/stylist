@@ -1,0 +1,35 @@
+<ion-header class="header_color">
+  <ion-navbar hideBackButton>
+    <button ion-button menuToggle style="display:block !important;">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>notifications</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+    <div>
+        <div class="main_home_box" *ngFor="let notification of list">
+            <ion-list (click)="see_details(notification.salonjob_id)">
+              <ion-item no-lines>
+                <h2> 
+                    {{notification.title}}
+                </h2>
+                  <ion-icon style="float:right" name="ios-arrow-forward"></ion-icon>
+                  <p>{{notification.created | mydate }}</p>
+              </ion-item>
+               
+            </ion-list>   
+        </div>
+    </div>
+  <p class="message"><span> {{msg}}</span></p>
+</ion-content>

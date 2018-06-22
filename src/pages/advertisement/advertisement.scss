@@ -1,0 +1,41 @@
+page-advertisement {
+        .add{
+        position:relative;
+            width: 100%;
+    height: -webkit-fill-available;
+    
+    a img{
+        height: -webkit-fill-available;
+    width: 100%;
+    }
+    .cross{
+               position: absolute;
+    right: 29px;
+    top: 30px;
+    background: transparent;
+    font-size: 30px;
+    width: 20px;
+    height: 24px;
+    font-weight: bold;
+    border: 1px solid #cac0c0;
+    /* text-align: center; */
+    line-height: 14px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 0;
+    margin: 0;
+    color: #313131;
+    box-shadow: none;
+    border: 0;
+    /* background: #c5c5c5; */
+    color: #000;
+    font-size: 13px;
+        text-shadow: 1px 0px 4px #eaeaea;  
+    ion-icon{
+        font-size: 31px;
+    }
+    }
+    }
+
+}

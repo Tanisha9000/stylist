@@ -1,0 +1,67 @@
+<!--
+  Generated template for the Filter2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header_color">
+
+  <ion-navbar>
+  	<ion-buttons left start (click)="dismiss()">
+        <button ion-button icon-only clear color="royal" class="cross" >
+           <ion-icon ios="ios-close" md="md-close"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>filter</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="royal" class="apply" (click)="home_go()">
+           skip
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <form>
+        <ion-list>        
+                 
+                 <ion-item>
+                    <ion-label stacked>Position</ion-label>
+                    <ion-select>
+                      <ion-option value="one" selected>Barber</ion-option>
+                      <ion-option value="Barber">Barber</ion-option>
+                    </ion-select>
+                  </ion-item>  
+                   
+           
+            <div class="preference">
+            <h3>Experince in</h3>
+                  <ion-item>
+              <ion-label>Fresher</ion-label>
+              <ion-checkbox color="dark" checked="true"></ion-checkbox>
+                   </ion-item>
+                  <ion-item>
+                  <ion-label>2-5 Years</ion-label>
+                  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>6-10 Years</ion-label>
+                  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+                </ion-item>
+
+
+                <ion-item>
+                  <ion-label>11+ Years</ion-label>
+                  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+                </ion-item>
+       </div> 
+        </ion-list>  
+      </form>
+  </ion-content>
+<ion-footer class="footer">
+    <ion-toolbar>
+      <ion-title (click)="home_go()">Apply</ion-title>
+    </ion-toolbar>
+  </ion-footer>

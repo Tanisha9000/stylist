@@ -1,0 +1,139 @@
+page-stylistapplicants {
+    .main_home_box {
+        width:  100%;
+        float:  left;
+        background: #f4f4f4;
+        padding: 3px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 4px 9px 0px #e6dada;
+        box-shadow: 0px 4px 9px 0px #e6dada;
+        margin-bottom: 12px;
+    
+
+         p{
+        	font-size: 11px !important;
+		    white-space: pre-line;
+		    color: #3a3838;
+		  
+		    display: flex;
+		  	font-weight: bold;
+		    margin: 2px 0;
+                        padding: 2px 0px;
+			        span{
+			        	font-size: 10px !important;
+                                            padding: 2px 0px;
+			        }
+        }
+        ion-avatar{
+        	margin: 5px 0 !important;
+        	img{
+		    width: 65px;
+		    height: 65px;
+        	}
+        }
+    }
+    .filter{
+        transform: rotate(90deg);
+        font-size: 12px;
+        color: #fff;
+    }
+    
+    .main_home_box > .list {
+        margin: 0;
+        position: relative;
+    }
+    
+    .main_home_box > .list > .item {
+        background: transparent;
+        padding: 0;
+        width:  100%;
+        float: left;
+    }
+    
+    .main_home_box > .list > .item ion-thumbnail {
+        margin: 0;
+        width: 85px;
+        height:  75px;
+        border-radius:  5px;
+        overflow: hidden;
+    }
+
+    .main_home_box > .list > .item ion-thumbnail img {
+        width:100%;
+        height:100%;
+    }
+    
+    .main_home_box > .list > .item .item-inner {
+        padding: 0px 0px 0px 10px;
+    }
+    .main_home_box > .list > .item .item-inner .label {
+        margin:0px 8px 0px 0;
+        padding: 3px 0;
+    }
+    .main_home_box h2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .main_home_box p,.main_home_box span {
+        @include para;
+    }
+    .message{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        height: 97%;
+        text-align: center;
+        vertical-align: middle;
+        span{
+            text-align: center;
+            width: 100%;
+            float: left;
+            font-size: 17px !important;
+            color: #7d7b7b;
+        }
+    }
+    
+    .main_btn {
+    position:  absolute;
+    right: 0px;
+    width: auto !important;
+    bottom:  0;
+       top: -4px;
+    margin: 0 auto;
+    z-index: 999;
+}
+
+.main_btn .label {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.main_btn .label button {
+    background:  #3FE0D0;
+    text-transform:  capitalize;
+    height:  30px;
+    border-radius: 4px;
+        margin: 0;
+       
+        span{
+            font-size: 12px !important;
+    
+        }
+    
+}
+
+.main_home_box .location{
+     width: 100%;
+    float: left;
+    white-space: pre;
+    margin-top: 8px;
+    span{
+        font-size: 10px !important;
+    white-space: pre-wrap;
+    display: block;
+    line-height: 12px;
+   
+    }
+}
+
+}

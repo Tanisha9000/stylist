@@ -1,0 +1,312 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>edit profile</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="top">
+        <img [src]="vendorimage" (click)="presentActionSheet()">
+
+    </div>
+
+    <div class="bottom" *ngIf='role == "stylist" '>
+        <div class="box_btm">
+            <div class="box_btm_inner mrbotm">
+                <form #heroForm1="ngForm"  novalidate>
+                    <ion-list>    
+                        <ion-item>
+                            <ion-label stacked>Name</ion-label>
+                            <ion-input type="text" placeholder="Enter name" [(ngModel)]="data.username" name="username" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Address</ion-label>
+                            <ion-input type="text" placeholder="Enter address" [(ngModel)]="data.address" name="address"></ion-input>
+                        </ion-item>
+
+<!--                        <ion-item>
+                            <ion-label stacked>City</ion-label>
+                            <ion-input type="text" placeholder="Enter city" [(ngModel)]="data.city" name="city"></ion-input>
+                        </ion-item>-->
+
+                        <ion-item>
+                            <ion-label stacked>State</ion-label>
+                            <!--<ion-input type="text" placeholder="Enter state" [(ngModel)]="data.state" name="state"></ion-input>-->
+                            <ion-select placeholder="Select state" style="text-transform: capitalize" [(ngModel)]="data.state" name="state" required>
+                                <ion-option *ngFor="let c of city" [value]="c.id" selected>{{c.name}}</ion-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Zip Code</ion-label>
+                            <ion-input type="text" placeholder="Enter zip code" [(ngModel)]="data.zip" name="zip" required></ion-input>
+                        </ion-item>
+
+                        <!--                    <ion-item>
+                                                <ion-label stacked>Email</ion-label>
+                                                <ion-input type="email" placeholder="enter email" text-lowercase [(ngModel)]="data.email" name="email"></ion-input>
+                                            </ion-item>-->
+
+                        <ion-item>
+                            <ion-label stacked>Phone</ion-label>
+                            <ion-input type="text" placeholder="Enter phone number" [(ngModel)]="data.phone" name="phone" maxlength="13" minlength="4" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Date of Birth</ion-label>
+                            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" placeholder="DD/MM/YYYY" [(ngModel)]="data.dob" name="dob" ></ion-datetime>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Profession</ion-label>
+                            <ion-select placeholder="Select profession" [(ngModel)]="data.profession" name="profession" required>
+                                <ion-option *ngFor="let pro of profession" [value]="pro">{{pro.name}}</ion-option>
+                                <!--<ion-option value="Bar">Barber</ion-option>--> 
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Languages spoken</ion-label>
+                            <ion-select placeholder="Select language" style="text-transform: capitalize" [(ngModel)]="data.language" name="language" multiple="true" required>
+                                <ion-option *ngFor="let lan of language" [value]="lan.id"  >{{lan.name}}</ion-option>
+                                <!--                            <ion-option value="eng">English</ion-option>  
+                                                            <ion-option value="rus">Russian</ion-option>-->
+                            </ion-select>
+                        </ion-item>
+                        
+                        <ion-item>
+                            <ion-label stacked>Location Preference</ion-label>
+                            <ion-input type="text" placeholder="Enter location" [(ngModel)]="data.location" name="location" required></ion-input>
+<!--                            <ion-select placeholder="Select location" style="text-transform: capitalize" [(ngModel)]="data.location" name="location">
+                                <ion-option *ngFor="let c of city" [value]="c.name" selected>{{c.name}}</ion-option>
+                            </ion-select>-->
+                        </ion-item> 
+
+                        <ion-item>
+                            <ion-label stacked>Work Experience</ion-label>
+                            <ion-select placeholder="Select work experience" [(ngModel)]="data.workexp" name="workexp" required>
+                           <ion-option value="0-2">0-2 years</ion-option>
+                                <ion-option value="3-5">3-5 years</ion-option>
+                                <ion-option value="6-10">6-10 years</ion-option>
+                                <ion-option value="11-15">11-15 years</ion-option>
+                                <ion-option value="16+">16+ years</ion-option>
+                            </ion-select>
+                        </ion-item> 
+ 
+                        <div class="preference">
+                            <h3 >Pay Type</h3>  
+                            <ion-item>
+                                <ion-label>Booth Rent</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.Booth_Rent" name="Booth_Rent"></ion-checkbox>
+                            </ion-item>
+
+                            <ion-item>
+                                <ion-label>Salary</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.Salary" name="Salary"></ion-checkbox>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Commission</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.Commission" name="Commission"></ion-checkbox>
+                            </ion-item>
+                        </div>  
+
+                        <div class="preference">
+                            <h3 >Skills</h3>  
+                            <ion-item *ngFor="let add of responseskills;let i = index">
+                                <ion-label>{{add.name}}</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="responseskills[i].check" name="check{{i}}"></ion-checkbox>
+                            </ion-item>
+
+                            <ion-item>
+                                <ion-label>Others</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="chk.other" name="other" (ionChange)="otherski(chk.other)"></ion-checkbox>
+                            </ion-item>  
+                            <ion-input *ngIf="bit ==1" class="others othersprf" type="text" placeholder="Other skills" [(ngModel)]="data.otherskill" name="otherskill"></ion-input>
+                        </div> 
+                        
+
+                        <ion-item>
+                            <label class="areyou">Licensed </label>
+                            <label class="select clor">Select
+                                <div class="age">
+                                    <input type="radio" name="rr" value="1" [(ngModel)]="data.yes" (click)="nolicense(data.yes)"/>
+                                     <!--<ion-radio name="rr" value="1" [(ngModel)]="data.yes"></ion-radio>-->
+                                    <label>yes</label>
+                                    <input type="radio" name="rr" value="0" [(ngModel)]="data.no" (click)="nolicense(data.no)"/>
+                                    <!--<ion-radio name="rr" value="0" [(ngModel)]="data.no" (ionSelect)="nolicense(data.no)"></ion-radio>-->
+                                    <label>No</label>
+                                </div>
+                            </label>
+
+                        </ion-item>
+                        <ion-item [hidden] = "field == 1">
+                            <ion-label stacked>State of License</ion-label>
+                            <ion-input type="text" placeholder="Enter state of license" [(ngModel)]="data.licensestate" name="licensestate"></ion-input>
+                        </ion-item> 
+
+                        <ion-item [hidden] = "field == 1">
+                            <ion-label stacked>License Type:</ion-label>
+                            <ion-input type="text" placeholder="Enter Type" [(ngModel)]="data.licensetype" name="licensetype"></ion-input>
+                        </ion-item> 
+
+                        <ion-item [hidden] = "field == 1">
+                            <ion-label stacked>License Number:</ion-label>
+                            <ion-input type="text" placeholder="Enter number" [(ngModel)]="data.licenseno" name="licenseno"></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>About Me:</ion-label>
+                            <ion-input type="text" placeholder="Additional info" [(ngModel)]="data.aboutme" name="aboutme"></ion-input>
+                        </ion-item>   
+                    </ion-list>
+                     <button ion-button class="main_btn" type='submit' [disabled]="!heroForm1.valid" (tap)="editstylist(heroForm1)">submit</button>        
+                </form>
+            </div>  
+           
+        </div>
+    </div>
+    <!--SALON EDIT PROFILE-->
+    <div class="bottom" *ngIf = 'role == "salon" '>
+        <div class="box_btm">
+            <div class="box_btm_inner mrbotm">
+                <form #heroForm="ngForm"  novalidate>
+                    <ion-list>      
+                        <ion-item>
+                            <ion-label stacked>Business Name</ion-label>
+                            <ion-input type="text" placeholder="Enter Business name" [(ngModel)]="dat.businessname" name="businessname" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Business Address</ion-label>
+                            <ion-input type="text" placeholder="Enter Address" [(ngModel)]="dat.address" name="address" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Owner's First Name</ion-label>
+                            <ion-input type="text" placeholder="Enter First Name" [(ngModel)]="dat.firstname" name="firstname" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Owner's Last Name</ion-label>
+                            <ion-input type="text" placeholder="Enter Last Name" [(ngModel)]="dat.lastname" name="lastname" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Email</ion-label>
+                            <ion-input type="email" placeholder="Enter email" [(ngModel)]="dat.email" name="email" required readonly text-lowercase></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Phone</ion-label>
+                            <ion-input type="text" placeholder="Enter Phone Number" [(ngModel)]="dat.phone" name="phone" maxlength="13" minlength="4" required></ion-input>
+                        </ion-item>
+
+                        <!--                    <ion-item>
+                                                <ion-label stacked>Date of Birth</ion-label>
+                                                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" placeholder="DD/MM/YYYY" [(ngModel)]="dat.dob" name="dob"></ion-datetime>
+                                            </ion-item>-->
+
+                        <ion-item>
+                            <ion-label stacked>Experience In Business</ion-label>
+                            <ion-select placeholder="Select experience" [(ngModel)]="dat.experience" name="experience" required>
+                                <ion-option value="0-2">0-2 years</ion-option>
+                                <ion-option value="3-5">3-5 years</ion-option>
+                                <ion-option value="6-10">6-10 years</ion-option>
+                                <ion-option value="11-15">11-15 years</ion-option>
+                                <ion-option value="16+">16+ years</ion-option>
+                            </ion-select>
+                        </ion-item> 
+
+                        <!--                    <div class="preference">
+                                                <h3 >Service Offered</h3>
+                                                <ion-label class="likebtns">         
+                                                    <button ion-button class="satisfiedbtn green" > 
+                                                        <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon>
+                                                        Smooth
+                                                    </button>
+                                                    <button ion-button class="satisfiedbtn grey">  
+                                                        <ion-icon ios="ios-thumbs-down" class="black" md="md-thumbs-down"></ion-icon>
+                                                        Straight
+                                                    </button>
+                                                </ion-label>
+                                            </div>   -->
+
+                        <ion-item>
+                            <ion-label stacked>State</ion-label>
+                            <ion-select placeholder="Choose State" [(ngModel)]="dat.state" name="state" required>
+                                <ion-option *ngFor="let c of city" value="{{c.name}}">{{c.name}}</ion-option>
+                                <!--<ion-option value="chd">Chandigarh</ion-option>-->
+                            </ion-select>
+                            <!--<ion-input type="text" placeholder="Enter State" [(ngModel)]="dat.state" name="state"></ion-input>-->
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label stacked>Zip Code</ion-label>
+                            <ion-input type="text" placeholder="Enter Zip Code" [(ngModel)]="dat.zipcode" name="zipcode" required></ion-input>
+                        </ion-item>
+
+<!--                        <ion-item>
+                            <ion-label stacked> City </ion-label>
+                            <ion-input type="text" placeholder="Enter Location" [(ngModel)]="dat.location" name="location"></ion-input>
+                            <ion-select placeholder="Choose Location" [(ngModel)]="dat.location" name="location">
+                                <ion-option *ngFor="let c of city" value="{{c.name}}">{{c.name}}</ion-option>
+                            </ion-select>
+                        </ion-item> -->
+
+<!--                        <div class="preference">
+                            <h3>Skills</h3>  
+                            <ion-item *ngFor="let add of responseskills;let i = index">
+                                <ion-label>{{add.name}}</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="responseskills[i].check" name="check{{i}}"></ion-checkbox>
+                            </ion-item>
+
+                            <ion-item>
+                                <ion-label>Others</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="chk.other" name="other" (ionChange)="otherski(chk.other)"></ion-checkbox>
+                            </ion-item>  
+                             <ion-input *ngIf="bit ==1" class="others othersprf" type="text" placeholder="Other skills" [(ngModel)]="dat.otherskill" name="otherskill"></ion-input>
+                        </div> -->
+                        <div class="preference">
+                            <h3 >Pay Type</h3>  
+                            <ion-item>
+                                <ion-label>Booth Rent</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.Booth_Rent" name="Booth_Rent"></ion-checkbox>
+                            </ion-item>
+
+                            <ion-item>
+                                <ion-label>Salary</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.Salary" name="Salary"></ion-checkbox>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Commission</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="check.Commission" name="Commission"></ion-checkbox>
+                            </ion-item>
+                        </div>
+                       
+                        <ion-item>
+                            <ion-label stacked>State of License</ion-label>
+                            <ion-input type="text" placeholder="Enter state of license" [(ngModel)]="dat.licensestate" name="licensestate"></ion-input>
+                        </ion-item> 
+
+<!--                        <ion-item>
+                            <ion-label stacked>License Type:</ion-label>
+                            <ion-input type="text" placeholder="Enter Type" [(ngModel)]="dat.licensetype" name="licensetype"></ion-input>
+                        </ion-item>                            -->
+
+                        <ion-item>
+                            <ion-label stacked>About Us:</ion-label>
+                            <ion-input type="text" placeholder="Please Enter...." [(ngModel)]="dat.about" name="about"></ion-input>
+                        </ion-item>   
+                    </ion-list>    
+                     <button ion-button class="main_btn" type='submit' [disabled]="!heroForm.valid" (tap)="editsalon(heroForm)">submit</button> 
+                </form>
+            </div>  
+                   
+        </div>
+
+    </div>
+</ion-content>

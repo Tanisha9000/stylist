@@ -1,0 +1,162 @@
+page-feedback {
+
+    .label{
+       
+    overflow: visible;
+       text-overflow: unset;
+    white-space: pre-line;
+
+    }	
+    
+	.logo {
+    width: 110px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #b2b1b1;
+    height: 110px;
+    margin: 0 auto;
+    img {
+            width: 100%;
+    padding: 8px;
+    height: 100%;
+  }
+	}
+	
+	  form {
+        width:  100%;
+        float: left;
+
+        ion-item{
+        	ion-label{
+        font-size: 9px;
+    	padding: 0;
+
+    	font-weight: lighter;
+    	       white-space: pre-wrap;
+        }
+        }
+
+        ion-textarea{
+            border-bottom: 1px solid silver;
+
+        }
+        
+    }
+    form > .list {
+         margin-bottom: 25px;
+         width:  100%;
+         float: left;
+        }
+    
+     form > .list > .item {
+        border-top: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    
+     form > .list > .item > .item-inner {
+        padding: 0;
+    }
+    
+     form > .list > .item > .item-inner .label {
+        
+        color: #b7b7b7;
+        padding: 0 10px;
+    }
+    form > .list > .item > .item-inner input {
+        padding: 0 10px;
+        color: #556571;
+        font-size: 15px;
+        margin-top: 0px;
+        text-transform: capitalize;
+    }
+   form > .list-ios > .item-block:first-child {
+    border-top: 0px;
+}
+.likebtns{
+	  margin-bottom: 4px !important;
+	padding: 0;
+       border-bottom: 1px solid silver;
+    display: flex;
+    button{
+            padding: 3px 11px !important;
+        display: block;
+    }
+    .satisfiedbtn{
+    height: 1.8em;
+    font-size: 13px;
+    color: #fff;
+    padding: 9px 17px;
+    border: 0;
+    border-radius: 40px;
+    font-weight: lighter;
+    text-transform: capitalize;
+    width: 140px !important;
+    margin: 0 !important;
+      
+}
+
+   .babi{
+    height: 1.8em;
+    font-size: 13px;
+        color: #24242d;
+    padding: 9px 17px;
+    border: 0;
+    border-radius: 40px;
+    font-weight: lighter;
+    text-transform: capitalize;
+      width:100%;
+          background: #4fde61;
+          
+}
+   .unsatisfy{
+    height: 1.8em;
+    font-size: 13px;
+    background: #b5b3b3;
+    color: #0004ff;
+    padding: 9px 17px;
+    border: 0;
+    border-radius: 40px;
+    font-weight: lighter;
+    text-transform: capitalize;
+    width:100%;
+}
+.green{
+	 background-color: #3e922f;
+}
+.grey{
+	 background-color: #d22a2a;
+}
+ion-icon{
+	
+    font-size: 15px;
+    margin-right: 5px;
+}
+.black{
+    color: #000;
+}
+
+}
+  ul {
+  padding: 0px;
+  margin: 7px 0px;
+ 
+  &.rating li {
+   padding:0px !important;
+    background: none;
+    color: #ffb400;
+ 
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+} 
+form{
+    .label{
+        color: #424242 !important;
+    font-weight: 400;
+    font-size: 13px !important;
+    }
+}
+
+}

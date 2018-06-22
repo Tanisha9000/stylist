@@ -1,0 +1,51 @@
+<ion-header class="header_color">
+  <ion-navbar hideBackButton>
+    <button ion-button menuToggle style="display:block !important;">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Job Submissions</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only color="royal" class="filter" (click)="filter_go()">
+              <ion-icon ios="ios-options" md="md-options"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="applicants.length > 0">
+	<div class="main_home_box" *ngFor="let item of applicants;let i = index">
+      <ion-list (tap)="stylistprofile(item.restdata.userdetail.user_id, item.restdata.jobapplie.id,i,item.restdata.jobapplie.review)">
+          <ion-item no-lines>
+             <ion-avatar item-start>
+              <img [src]="item.url">
+          </ion-avatar>
+            <h2>{{item.restdata.user.name}}</h2>
+            <p class="location">Location: <span>{{item.restdata.userdetail.location_prefrence}}</span></p>
+            <p>Exp: <span>{{item.restdata.userdetail.work_experince}} years</span></p>
+            <div class="review_button">
+               <button *ngIf="item.restdata.jobapplie.review == null" ion-button type="button"> View </button>
+               <button *ngIf="item.restdata.jobapplie.review == 1" ion-button type="button"> Viewed </button>
+               <button *ngIf="item.restdata.jobapplie.review == 2" ion-button type="button"> Accepted </button>
+          
+            </div>
+          </ion-item>
+          <ion-item class="main_btn">
+               <button *ngIf="item.restdata.jobapplie.review == null" ion-button type="button"> View </button>
+               <button *ngIf="item.restdata.jobapplie.review == 1" ion-button type="button"> Viewed </button>
+               <button *ngIf="item.restdata.jobapplie.review == 2" ion-button type="button"> Accepted </button>
+          </ion-item>
+        </ion-list>    
+  </div>
+</div>
+  <p class="message"><span> {{msg}}</span></p>
+</ion-content>

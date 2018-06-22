@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-navbar  class="header_color">
+        <ion-title>edit work history</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form #heroForm="ngForm"  novalidate>
+        <ion-list>        
+            <ion-item>
+                <ion-label stacked>Name of business</ion-label>
+                <ion-input type="text" placeholder="Enter name of business" [(ngModel)]="data.username" name="username" #username='ngModel' required>  
+                </ion-input>
+            </ion-item>
+            <div *ngIf="username.errors && (username.dirty || username.touched)" class="errormsg alert alert-danger">
+                <div [hidden]="!username.errors.required" class="errormsg alert alert-danger">
+                    Please enter name field!
+                </div>
+            </div> 
+            <ion-item>
+                <ion-label stacked>Position held</ion-label>
+                <ion-input type="text" placeholder="Enter position held" [(ngModel)]="data.position" name="position" #position='ngModel' required></ion-input>
+            </ion-item>
+            <div *ngIf="position.errors && (position.dirty || position.touched)" class="errormsg alert alert-danger">
+                <div [hidden]="!position.errors.required" class="errormsg alert alert-danger">
+                    Please enter your position
+                </div>
+            </div>
+
+            <div class="date">
+                <ion-label stacked>Date</ion-label>
+                <ion-row>
+                    <ion-col  no-padding col-6> From:
+                        <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Select from" [(ngModel)]="data.datefrom" name="datefrom" #datefrom='ngModel' required></ion-datetime></ion-col>
+                    <ion-col no-padding col-6>   To:
+                        <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Select to" [(ngModel)]="data.dateto" name="dateto" #dateto='ngModel' required></ion-datetime></ion-col>
+                </ion-row>
+            </div>
+            <div *ngIf="datefrom.errors && (datefrom.dirty || datefrom.touched)" class="errormsg alert alert-danger">
+                <div [hidden]="!datefrom.errors.required" class="alert alert-danger">
+                    Please select starting date
+                </div>
+            </div>
+            <div *ngIf="dateto.errors && (dateto.dirty || dateto.touched)" class="errormsg alert alert-danger">
+                <div [hidden]="!dateto.errors.required" class="alert alert-danger">
+                    Please select ending date
+                </div>
+            </div>
+            <ion-item>
+                <ion-label stacked>Work Description</ion-label>
+                <ion-textarea placeholder="Enter Description(describe work duties in detail)" [(ngModel)]="data.desc" name="desc" #desc='ngModel' required></ion-textarea>
+            </ion-item>
+            <div *ngIf="desc.errors && (desc.dirty || desc.touched)" class="errormsg alert alert-danger">
+                <div [hidden]="!desc.errors.required" class="alert alert-danger">
+                    Please enter your work description
+                </div>
+            </div>
+        </ion-list>
+        <button ion-button class="main_btn" type='submit' [disabled]="!heroForm.valid" (tap)="editwork(heroForm)">submit</button>
+
+    </form>
+</ion-content>

@@ -1,0 +1,232 @@
+page-editprofile {
+.top{
+        width: 100%;
+        float: left;
+        height: 38vh;
+        background-color:#353951; 
+        background-image: url(../assets/imgs/bg.png);
+        background-repeat: repeat;
+        background-size: cover;
+        background-position: 0;
+    img {
+             width: 85px;
+            height: 85px;
+            margin: 25px auto;
+            display: block;
+            border-radius: 50%;
+    }
+     h4 {
+        width:  100%;
+        float:  left;
+        text-align:  center;
+        color:  #fff;
+        margin: 10px 0;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+}
+    .bottom{
+        width: 100%;
+        float: left;
+        height: 50vh;
+        position: relative;
+
+        .create_now{
+            width: 100%;
+            float: left;
+            color: #353951;
+        
+        a{
+            color: #353951;
+            text-decoration: underline;
+            text-transform: capitalize;
+        }
+
+        }
+    }
+    .box_btm_inner{
+        border-radius:  8px;
+        box-shadow: 0px 4px 9px 0px #e6dada;
+        overflow: hidden;
+        background:  #fff;
+        padding: 20px 19px;
+
+         .age{
+        display: inline-block;
+        font-size: 13px;
+        color: #000;
+        float: right;
+            margin: 0 0 2px 0px;
+        /* justify-content: flex-end; */
+        }
+        .areyou{
+        font-size: 11px;
+        display: block;
+
+        
+        }
+        .are{
+           color: #556571 !important;
+margin-top: 6px;
+margin-bottom: 4px;
+padding: 0 ;
+font-size: 13px;
+
+display: flex;
+       .age{
+font-size: 13px;
+color: #000;
+position: absolute;
+right: 0;
+  input{
+            float: left;
+        }
+        label{
+            float: left;
+            padding:2px 2px;
+        }
+
+        }
+        }
+    }
+
+    .box_btm {
+        width:  90%;
+        position:  absolute;
+        left:  0;
+        margin: auto;
+        right: 0;
+        top: -80px;
+    
+    form {
+        width:  100%;
+        float: left;
+ 
+        .preference{
+          
+          
+        	width: 100%;
+                margin:0;
+                padding-top: 8px;
+		float: left;
+		ion-item{
+			width: 50%;
+			float:left;
+			ion-label{
+				font-size: 13px;
+                                margin: 0;
+                line-height: 14px;
+                text-overflow: unset;
+                white-space: pre-line;
+                overflow: visible;
+			}
+		}
+
+        	h3{
+                   margin: 10px 0;
+        color: #b3aeae;
+		font-size: 13px;
+		text-align: center;
+        
+        text-transform: capitalize;
+        	}
+    .item-inner{
+    	border-bottom: 0px;
+    }
+    ion-checkbox{
+    	margin: 0 4px 0px 0 !important;
+
+    	 .checkbox-icon{
+    	 	border-radius: 4px;
+	position: relative;
+	width: 15px;
+	height: 15px;
+	border-width: 1px;
+	background-color: #fff;
+	.checkbox-inner {
+    border-color: #6b6767;
+    left: 5px;
+    top: 1px; 
+
+		}
+    	 }
+    	
+    }
+
+    .othr{width:100%;float:left;}
+      .others{
+        input{
+            
+                border-bottom: 1px solid #cec2c2;
+                padding-bottom: 4px;
+                margin: 0 !important;
+              
+        }
+            }
+    }
+
+    .datetime-text{
+            font-size: 13px;
+    color: #5e6d78;
+    padding-left: 10px;
+    }
+
+}
+}
+    .icn{
+        margin-bottom: -20px !important ; 
+    }
+     form > .list {
+         margin-bottom: 25px;
+         width:  100%;
+         float: left;
+        }
+    
+     form > .list > .item {
+        border-top: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    
+     form > .list > .item > .item-inner {
+        padding: 0;
+    }
+    
+     form > .list > .item > .item-inner .label {
+        text-transform: capitalize;
+        color: #b7b7b7;
+        padding: 0 10px;
+    }
+   
+    .main_btn {
+        width: 55%;
+        height: 35px;
+        margin: 0 auto 15px;
+        float: none;
+        display: block;
+        background: #3FE0D0;
+        text-transform: capitalize;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .list > .item-block:first-child{
+    border-top: 0px;
+
+    ion-input{
+    position: relative;
+    }
+}
+
+.clor{
+     color: #556571;
+}
+.othersprf{
+    float:left;
+}   
+
+}
+.mrbotm{
+    margin-bottom: 20px;
+
+}

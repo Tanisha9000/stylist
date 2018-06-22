@@ -1,0 +1,77 @@
+<!--
+  Generated template for the PostdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header_color">
+
+  <ion-navbar>
+    <ion-title>profile detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div class="post_detail">
+   <div class="img_box">
+        <img [src] = "vendorimage">
+    </div>
+    <ul>
+      <li>Applicant name:<p>{{ownername}}</p></li>
+      <li>Work Experience:<p>{{workexp}}</p></li>
+      <li>Profession: <p>{{profession}}</p></li>
+      <li>Location:<p>{{location}}</p></li> 
+      <li>Skills: 
+            <p *ngFor="let ki of skills; let i = index">{{ki}}
+             <span [hidden]="i == skills.length-1">,</span>
+            </p>
+            <p *ngIf="skills.length == 0">No Info.</p>
+      </li>
+      <li>Language:<p>{{language}}</p></li>
+      <li>Licensed:<p>{{licensed}}</p></li>
+      <li>Pay Preference: <p>{{paypref}}</p></li>
+    </ul>
+
+    <ion-list class="accordion">
+    <ion-list-header (click)="toggleData(data1)" class="contacthead" >   
+      About: <ion-icon color="primary" item-right [name]="data1.icon1"></ion-icon>
+      <ion-icon *ngIf="bit == 0" color="primary" item-right name= ios-arrow-down></ion-icon>
+    </ion-list-header>
+    <ion-item padding *ngIf="data1.showDetails1">
+      <div>
+     <p >{{aboutus}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
+
+    <ion-list class="accordion">
+        <ion-list-header class="contacthead" (click)="toggleDetails(data)">   
+        Contact Us:  <ion-icon color="primary" item-right [name]="data.icon"></ion-icon>
+        <ion-icon *ngIf="ppit == 0" color="primary" item-right name= ios-arrow-down></ion-icon>
+        </ion-list-header>
+        <ion-item padding *ngIf="data.showDetails" >
+          <div>
+          <ul style="margin: 0;" >
+          <li>Phone Number:<p>{{phone}}</p></li>
+          <li>Email:<p>{{email}}</p></li>
+          <!-- <li>Rate Stylist:
+          <div class="stars">
+          <ion-icon ios="ios-star" class="yellow" md="md-star"></ion-icon>
+          <ion-icon ios="ios-star" class="yellow" md="md-star"></ion-icon>
+          <ion-icon ios="ios-star" class="yellow" md="md-star"></ion-icon>
+          <ion-icon ios="ios-star"  class="yellow" md="md-star"></ion-icon>
+          <ion-icon ios="ios-star" md="md-star"></ion-icon>
+      </div>
+      </li>  -->
+      </ul>
+      </div>
+    </ion-item>
+  </ion-list> 
+  </div>
+</ion-content> 
+<!--<ion-footer class="footer">
+    <ion-toolbar>
+      <ion-title>Apply</ion-title>
+    </ion-toolbar>
+  </ion-footer>-->

@@ -1,0 +1,59 @@
+<!--
+  Generated template for the FilterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header_color">
+
+    <ion-navbar hideBackButton class="cstmheader">
+        <ion-title>filter</ion-title>
+        <ion-buttons start left class="btnhide">
+            <button ion-button icon-only color="royal" class="apply" (tap)="check()">
+                skip
+            </button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" class="apply" (tap)="check()">
+                skip
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form #heroForm="ngForm" novalidate>
+        <ion-list>        
+            <ion-item>              
+                <ion-label stacked>State</ion-label>
+                  <ion-select placeholder="Choose State" [(ngModel)]="data.pass" name="pass">  
+                                <ion-option *ngFor="let c of city" value="{{c.id}}">{{c.name}}</ion-option>
+                   </ion-select>
+                <!--<ion-input type="text" placeholder="Enter state" [(ngModel)]="data.pass" name="pass">-->  
+                <!--</ion-input>-->
+            </ion-item>        
+            <ion-item>               
+                <ion-label stacked>Zip code</ion-label>
+                <ion-input type="text" placeholder="Enter zip code" [(ngModel)]="data.zip" name="zip"></ion-input>
+            </ion-item>        
+
+            <div class="preference" *ngIf="role == 'salon' ">
+                <h3>category</h3>
+                <div *ngFor="let add of profession;let i = index">
+                    <ion-item>
+                        <ion-label>{{add.name}}</ion-label>
+                        <ion-checkbox color="dark" [(ngModel)]="profession[i].beauti" name="beauti{{i}}" (ionChange)="checkvalue(profession[i].beauti,i,add.name,add.id)"></ion-checkbox>
+                    </ion-item>
+                </div>
+            </div> 
+        </ion-list> 
+
+    </form>
+</ion-content>
+<ion-footer class="footer">
+    <ion-toolbar>
+        <ion-title (click)="home_go()">Apply</ion-title>
+    </ion-toolbar>
+</ion-footer>

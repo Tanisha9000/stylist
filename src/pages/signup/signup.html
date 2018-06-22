@@ -1,0 +1,146 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar class="cstmheader">
+        <ion-title>signup</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div class="top">
+    <div class="logo">        
+        <img src="assets/imgs/mylogo.png">
+    </div>
+    </div>
+
+    <div class="bottom">
+
+        <div class="box_btm">
+
+            <div class="box_btm_inner">
+                <form #heroForm="ngForm"  novalidate>
+                    <ion-list>
+
+                        <ion-item>
+                            <ion-label stacked>Name*</ion-label>
+                            <ion-input type="text" placeholder="Enter name" [(ngModel)]="data.username" name="username" #username='ngModel' required></ion-input>
+                        </ion-item>
+<!--                        <div *ngIf="username.errors && (username.dirty || username.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!username.errors.required" class="alert alert-danger">
+                                This field is required
+                            </div>
+                        </div> -->
+
+                        <ion-item>
+                            <ion-label stacked>Address*</ion-label>
+                            <ion-input type="text" placeholder="Enter Address" [(ngModel)]="data.address" name="address" #address='ngModel' required></ion-input>
+                        </ion-item>
+<!--                        <div *ngIf="address.errors && (address.dirty || address.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!address.errors.required" class="alert alert-danger">
+                                This field is required
+                            </div>
+                        </div> -->
+
+                        <ion-item>
+                            <ion-label stacked>Email*</ion-label>
+                            <ion-input type="email" placeholder="Enter email" [(ngModel)]="data.email" name="email" #email='ngModel' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></ion-input>
+                        </ion-item>
+<!--                        <div *ngIf="email.errors && (email.dirty || email.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!email.errors.required" class="alert alert-danger">
+                                This field is required
+                            </div>
+                        </div> -->
+                        <div *ngIf="email.errors && (email.dirty || email.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!email.errors.pattern" class="alert alert-danger">
+                                Please enter a valid email address
+                            </div>
+                        </div>
+
+                        <ion-item>
+                            <ion-label stacked>Phone*</ion-label>
+                            <ion-input type="tel" placeholder="Enter Phone Number" [(ngModel)]="data.phone" name="phone" #phone='ngModel' maxlength="13" minlength="4" required></ion-input>
+                        </ion-item>
+<!--                        <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!phone.errors.required" class="alert alert-danger">
+                                This field is required
+                            </div>
+                        </div>-->
+
+                        <ion-item>
+                            <ion-label stacked>Are you {{rolee}}*</ion-label>
+                            <ion-select [(ngModel)]="data.role" name='role' #role='ngModel' placeholder="Select role" (ionChange)="notify(data.role)" required>
+                                <ion-option value="stylist">Salon Personnel</ion-option>
+                                <ion-option value="salon">Salon Owner</ion-option>
+                            </ion-select>
+                        </ion-item>
+<!--                         <div *ngIf="role.errors && (role.dirty || role.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!role.errors.required" class="alert alert-danger">
+                                This field is required
+                            </div>
+                        </div>-->
+
+                        <ion-item>
+                            <ion-label stacked>Password*</ion-label>
+                            <ion-input type="password" placeholder="Enter password" [(ngModel)]="data.password" name="password" #password='ngModel' minlength="5" required></ion-input>
+                        </ion-item> 
+<!--                        <div *ngIf="password.errors && (password.dirty || password.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!password.errors.required" class="alert alert-danger">
+                                This field is required
+                            </div>
+                        </div>-->
+                        <div *ngIf="password.errors && (password.dirty || password.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!password.errors.minlength" class="alert alert-danger">
+                                Password should be atleast 5 characters in length
+                            </div>
+                        </div>
+
+
+                        <ion-item>
+                            <ion-label stacked>Confirm password*</ion-label>
+                            <ion-input type="password" placeholder="Re-enter password" [(ngModel)]="data.cpassword" name="cpassword" #cpassword='ngModel' (input)="onInput($event)" required></ion-input>
+                        </ion-item>
+                        <div *ngIf="m == 0">Passwords do not match</div>
+                        <div *ngIf="m == 1">Passwords matched</div>
+<!--                        <div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!cpassword.errors.required" class="alert alert-danger">
+                                This field is required
+                            </div>
+                        </div>-->
+<!--                        <div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" class="alert alert-danger">
+                            <div [hidden]="!cpassword.errors.minlength" class="alert alert-danger">
+                                Password should be atleast 5 characters in length
+                            </div>
+                        </div>-->
+
+                        <ion-item>
+                            <label fixed class="areyou">Are You 18+ ?*</label>
+
+                            <div class="age">
+                                <input type="radio" name="rr" value="1" [(ngModel)]="data.yes" checked="true" required/>
+                                <label>yes</label>
+                                <input type="radio" name="rr" value="0" [(ngModel)]="data.no" required/>
+                                <label>No</label>
+                            </div>
+
+                        </ion-item>    
+
+                    </ion-list>
+                    <button ion-button class="main_btn" type='submit' [disabled]="!heroForm.valid" (tap)="home_go(heroForm)">register</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</ion-content>
+

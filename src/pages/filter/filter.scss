@@ -1,0 +1,107 @@
+page-filter {
+
+    .apply {
+        color: #fff;
+        text-transform: capitalize;
+        font-weight: lighter;
+        border: 1px solid #fff;
+        padding: 2px 9px !important;
+        height: 21px;
+       
+        font-family: Montserrat-Regular;
+
+        span{
+            font-size: 10px !important;
+        }
+    }
+   form {
+        width:  100%;
+        float: left;
+    
+
+    .preference{
+          border-bottom: 1px solid #c0c6ca;
+    width: 100%;
+        float: left;
+        ion-item{
+           width: 50%;
+            float:left;
+            padding: 0 10px;
+           
+        ion-label{
+				font-size: 13px;
+                                margin: 0;
+                line-height: 14px;
+                text-overflow: unset;
+                white-space: pre-line;
+                overflow: visible;
+			}
+        }
+        h3{
+            text-transform: capitalize;
+        color: #b3aeae;
+        font-size: 13px;
+            text-align: left;
+                padding: 0 10px;
+                margin: 0px;
+            }
+    .item-inner{
+        border-bottom: 0px !important;
+                 }
+    ion-checkbox{
+        margin: 0 4px 0px 0 !important;
+         .checkbox-icon{
+            border-radius: 4px;
+            position: relative;
+            width: 15px;
+            height: 15px;
+            border-width: 1px;
+            background-color: #fff;
+            .checkbox-inner {
+            border-color: #6b6767;
+            left: 5px;
+            top: 1px; 
+           
+        }
+        
+         }       
+      }
+    }
+
+   }
+ 
+
+      form > .list {
+         margin-bottom: 25px;
+         width:  100%;
+         float: left;
+        }
+    
+     form > .list > .item {
+        border-top: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    
+     form > .list > .item > .item-inner {
+        padding: 0;
+    }
+    
+     form > .list > .item > .item-inner .label {
+        text-transform: capitalize;
+        color: #b7b7b7;
+        padding: 0 10px;
+    }
+    
+}
+form > .list-ios > .item-block:first-child {
+    border-top:0px;
+}
+.cstmheader{
+    .toolbar-title{
+    width:100%;
+    }
+    .btnhide.bar-buttons {
+    visibility: hidden !important;
+}
+}

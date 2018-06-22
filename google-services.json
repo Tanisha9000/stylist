@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "806253105827",
+    "firebase_url": "https://styleapp-fd403.firebaseio.com",
+    "project_id": "styleapp-fd403",
+    "storage_bucket": "styleapp-fd403.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806253105827:android:e077463c29d47ced",
+        "android_client_info": {
+          "package_name": "com.stylist123"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806253105827-448mgraf89h4d3933l71oae5ffuj4oe7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj51jVvM2b1f-XU8iIbn8FKKVQwMtAJ4U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

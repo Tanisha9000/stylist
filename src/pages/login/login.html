@@ -1,0 +1,63 @@
+
+<ion-header>
+
+    <ion-navbar hideBackButton class="cstmheader">
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div class="top">
+        <div class="logo">
+        <img src="assets/imgs/mylogo.png">
+        </div>
+    </div>
+
+    <div class="bottom">
+
+        <div class="box_btm">
+
+            <div class="box_btm_inner">
+                <form #heroForm="ngForm"  novalidate>
+                    <ion-list>
+
+                        <ion-item>
+                            <ion-icon ios="ios-person-outline" md="md-person" item-end class="icn"></ion-icon>
+                            <ion-label stacked>Email</ion-label>
+                            <ion-input type="text" placeholder="Enter email"  [(ngModel)]="data.email" name="email" #email='ngModel' required>  
+                            </ion-input>
+                        </ion-item>
+                        <div *ngIf="email.errors && (email.dirty || email.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!email.errors.required" class="alert alert-danger">
+                                Please fill your email or name
+                            </div>
+                        </div>
+
+                        <ion-item class="show">
+                            <ion-icon ios="ios-eye-outline" md="md-eye"  item-end class="icn" (click)="eyeclicked(inputtype)"></ion-icon>
+                            <ion-label stacked>Password</ion-label>
+                            <ion-input type={{inputtype}} placeholder="Enter password" [(ngModel)]="data.pass" name="pass" #pass='ngModel' required></ion-input>
+                        </ion-item>
+                        <div *ngIf="pass.errors && (pass.dirty || pass.touched)" class="errormsg alert alert-danger">
+                            <div [hidden]="!pass.errors.required" class="alert alert-danger">
+                                Please fill your password
+                            </div>
+                        </div>
+
+                    </ion-list>
+                    <button ion-button class="main_btn" type='submit' [disabled]="!heroForm.valid" (tap)="login(heroForm)">sign in</button>
+                    <a class="forgot" (click)="forgot_go()">forgot password?</a>
+                </form>
+            </div>
+
+            <span class="create_now">Don't have an account? <a (click)="signup_go()">create now</a></span>
+
+        </div>
+
+    </div>
+
+
+</ion-content>

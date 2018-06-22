@@ -1,0 +1,454 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+@font-face {
+    font-family:Montserrat-Regular;
+    src: url('../assets/fonts/montserrat-regular.woff2');
+  }
+
+  @font-face {
+    font-family:Montserrat-Medium;
+    src: url('../assets/fonts/montserrat-medium.woff2');
+  }
+
+  .button-md:hover:not(.disable-hover) {
+    background-color: #3FE0D0;
+}
+ .button-md.activated{
+    background-color: #3FE0D0 !important;
+}
+.gobtn:hover:not(.disable-hover) {
+    background-color: transparent;
+}
+.gobtn.activated{
+    background-color:transparent !important;
+}
+
+/**********Placeholder color start************/
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #556571 !important;
+    opacity: 1 !important;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: #556571 !important;
+    opacity: 1 !important;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #556571 !important;
+    opacity: 1 !important;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: #556571 !important;
+    opacity: 1 !important;
+  }
+
+  /**********Placeholder color end************/
+
+  *{
+      letter-spacing: 1px;
+  }
+  h1,h2,h3,h4,h5,h6{
+    font-family:Montserrat-Medium;
+  }
+  p,span{
+    font-size: 15px !important;
+  }
+
+/*********************Header font family start****************/
+.filter ion-icon{
+    font-size:20px !important;
+}
+.title-ios{
+  padding:20px 60px 1px !important;
+}
+.title-md{
+  padding:0px 0px 1px !important;
+  text-align: center;
+}
+  .title{
+    font-family:Montserrat-Regular;
+    text-transform: uppercase;
+     text-overflow: unset!important ;
+  }
+
+  .header_color{
+      .toolbar-background{
+      background-color: #353951;
+      }
+      .toolbar-title.toolbar-title-md{
+          text-overflow: unset;
+    overflow: visible;
+
+      }
+      .toolbar-title{
+        color: #fff;
+        font-weight: lighter !important;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .back-button,.bar-buttons {
+        color: #fff;
+    }
+  }
+
+/*********************Header font family end****************/
+
+
+/*********************footer start****************/
+
+.footer .title {
+  padding: 0px 60px 0px !important;
+  font-size: 15px; 
+  
+ 
+}
+.footer .toolbar-title {
+  color: #fff;
+    font-family: Montserrat-Regular;
+    font-weight: lighter;
+   font-size: 15px; 
+    text-transform: capitalize;
+     text-overflow: unset!important ;
+   overflow:visible !important;
+}
+.footer .toolbar-background{
+  background: #3FE0D0;
+  
+}
+
+/*********************footer end****************/
+
+/*********************Header back button start****************/
+
+.back-button {
+    color: #000;
+}
+.bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
+
+    color: #000;
+
+}
+.back-button-text{
+    display: none;
+}
+ion-header{
+  .toolbar-title-md {
+         width: 80%;
+}
+}
+
+.alert-radio-label{
+    text-transform: capitalize;
+}
+
+/*color code in app*/
+.top {
+   
+     background-color: #3FE0D0 !important;
+    
+}
+.box_btm form .main_btn {
+    
+      background-color: #3FE0D0 !important;
+}
+.header_color .toolbar-background {
+      background-color: #3FE0D0 !important;
+}
+.footer .toolbar-background {
+       background-color: #3FE0D0 !important;
+}
+.menubg {
+    
+      background-color: #3FE0D0 !important;
+   
+}
+
+/*left padding in all the input label ,ionselect and textarea*/
+form > .list > .item > .item-inner input {
+        padding: 0 !important;
+        color: #556571;
+        font-size: 13px;
+        margin-top: 0px;
+        text-transform: unset;
+        margin-bottom: 4px;
+    }
+    form > .list > .item > .item-inner .label{
+       padding: 0!important;
+    }
+
+textarea{
+  font-size: 13px;
+      padding-left: 0px !important;
+      color: #5c5555;
+
+}
+.date{
+  .label,.col{
+    padding: 0px !important;
+
+  }
+  ion-datetime{
+              padding: 1px 2px !important;
+  }
+}
+.preference{
+  h3{
+    padding-left:  0px !important;
+  }
+   ion-item{
+    padding: 0px !important;
+  }
+}
+h2{
+  ion-select{
+    padding: 0 4px !important;
+  }
+}
+
+ion-datetime{
+  padding: 5px 0 4px 0 !important;
+
+}
+.datetime-text{
+  padding-left: 0px !important;
+}
+
+ion-select{
+      padding-left: 0px !important;
+     padding-top: 5px !important;
+padding-bottom: 4px !important;
+font-size: 13px;
+   
+      color: #5c5555;
+}
+
+/*left padding in all the input label ,ionselect and textarea*/
+ .main_home_box h2 {
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 3px 0 !important;
+ 
+    
+    }
+
+    .box_btm form >.list > .item, form >.list > .item  {
+   
+    margin-bottom: 6px !important;
+}
+.box_btm {
+    
+    
+  top: -63px !important;
+}
+.preference{
+  margin: 8px 0;
+}
+ .main_home_box {
+   
+    -webkit-box-shadow: 0px 4px 9px 0px #e6dada !important;
+    box-shadow: 0px 2px 11px 0px #c1c1c1 !important;
+   
+}
+.img_box {
+    -webkit-box-shadow: 0px 4px 9px 0px #e6dada !important;
+    box-shadow: 0px 2px 11px 0px #c1c1c1 !important;
+}
+.item .item-block .item-md{
+      border-bottom: 1px solid #d4d4d4;
+}
+.list > .item > .item-inner .label {
+   
+    margin-bottom: 0px;
+    font-size: 13px;
+}
+.box_btm_inner {
+    -webkit-box-shadow: 0px 4px 9px 0px #e6dada !important;
+    box-shadow: 0px 2px 11px 0px #c1c1c1 !important;
+}
+.accordion {
+  float: left;
+width: 100%;
+margin-bottom: 13px;}
+ion-list-header {
+   box-shadow: -1px 1px 2px 0px #c1bfbf !important;
+    min-height: 25px !important;
+    margin:0px;
+
+    ion-label{
+        margin: 5px 10px !important;
+    }
+    ion-icon{
+      
+   
+    
+    padding-bottom: 0 !important;
+        margin: 0px 0 !important;
+    padding-top: 5px !important;
+     padding-right: 5px !important;
+    }
+}
+.side{
+     width: 20px;
+    height: 20px;
+}
+ion-menu{
+  .item-inner{
+    border-bottom: 1px solid #d2d0d0 !important;
+  }
+
+  ion-icon{
+    margin-top: 0px;
+  float: left;
+  margin-right: 9px;
+  img{
+    width: 17px;
+  height: 17px;
+  }
+  }
+
+  ion-label{
+    line-height: 22px;
+margin-left: 20px !important;
+margin: 0px 0px !important;
+color: #aa9a9a;
+font-size: 14px;
+  }
+}
+.menubg{
+   width: 100%;
+float: left;
+height: 27vh;
+background-color: #353951;
+background-image: url(../assets/imgs/bg.png);
+background-repeat: repeat;
+background-size: cover;
+background-position: 0; 
+  .toolbar-background {
+     
+      background: transparent;
+  }
+
+  ion-toolbar{
+    background: transparent;
+ min-height: 147px !important;
+   border: 0px !important;
+margin: 0 !important;
+
+.toolbar-background{
+  border-bottom: 0px !important;
+}
+   
+  }
+  ion-avatar{
+    img{
+
+   
+   width: 70px;
+    height: 70px;
+    border: 2px solid #b2b2b1;
+    }
+  }
+  .item-inner{
+      border: 0px !important;
+    }
+  ion-item{
+    background: transparent;
+        margin: 22px 0;
+  }
+  h2{
+    color:#fff;
+        font-size: 15px;
+  }
+}
+.item-md[detail-push] .item-inner:after, button.item-md:not([detail-none]) .item-inner:after, a.item-md:not([detail-none]) .item-inner:after {
+   /* background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2012%2020'><path%20d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z'%20fill='%23c8c7cc'/></svg>");
+  */  padding-right: 0px;
+  content: "\f3d1";
+      font-family: "Ionicons";
+    background-position: right 14px center;
+    background-position: right calc(14px + constant(safe-area-inset-right)) center;
+    background-position: right calc(14px + env(safe-area-inset-right)) center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    font-size: 22px;
+   
+}
+.item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner {
+padding-right: 3px !important;
+    background-image: none;
+    }
+
+.item-ios[detail-push] .item-inner:after, button.item-ios:not([detail-none]) .item-inner:after, a.item-ios:not([detail-none]) .item-inner:after {
+   /* background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2012%2020'><path%20d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z'%20fill='%23c8c7cc'/></svg>");
+  */  padding-right: 0px !important;
+  content: "\f3d1";
+      font-family: "Ionicons";
+    background-position: right 14px center;
+    background-position: right calc(14px + constant(safe-area-inset-right)) center;
+    background-position: right calc(14px + env(safe-area-inset-right)) center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    font-size: 22px;
+   
+}
+/*.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+
+    border-bottom: 0px;
+
+}*/
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+
+    border-bottom: 0.55px solid #c8c7cc;
+}
+
+
+ion-list.accordion.list.list-ios {
+    margin-bottom: 20px !important;
+}
+.errormsg{
+    color:red;
+}
+.box_btm_inner form .list-ios > .item-block:last-child, .box_btm_inner form .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0.55px solid #c8c7cc !important;
+}
+page-postjobs .scroll-content, page-login .scroll-content, page-changepassword .scroll-content ,page-filter .scroll-content, page-filter2 .scroll-content
+,page-editprofile .scroll-content, page-feedback .scroll-content, page-forgot .scroll-content {
+   
+    
+    margin-bottom: 20px !important;
+   
+   margin-top: 50px !important;
+   padding-bottom:150px !important;}
+
+/*********************Header back button start****************/
+
+.list{margin-top: 1px}
+
+/*******Side_menu code******/
+
+ion-menu .item-inner{
+    padding-left: 16px;
+}
+ion-menu .item{
+    padding-left:0;
+}
+.menubg .item{
+    padding-left: 16px;
+}

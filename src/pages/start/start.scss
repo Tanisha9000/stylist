@@ -1,0 +1,76 @@
+page-start {
+.banner{
+    background-image: url(../assets/imgs/banner2.jpg);
+     background-repeat: repeat;
+        background-size: cover;
+        background-position: 0;
+}
+
+.outer{
+    display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+}
+
+.start{
+
+    text-align: center;
+   
+
+   		.logo {
+    width: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #b2b1b1;
+    height: 150px;
+    margin: 30px auto 0;
+    img {
+            width: 100%;
+    padding: 8px;
+    height: 100%;
+  }
+	}
+        .gobtn{
+                background: transparent;
+                border: 1px solid #7d7c7c;
+                width: 141px;
+                padding: 0;
+                height: 34px;
+                border-radius: 4px;
+                text-transform: capitalize;
+        }
+}
+
+ 
+
+ion-content:before {
+    width: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(16, 15, 15, 0.62);
+}
+    .bg {
+        width: 100%;
+        float: left;
+        background: url(../../assets/imgs/bg.png);
+        background-color: #353951;
+        background-repeat: repeat;
+        background-size: cover;
+        background-position: 0;
+
+       
+    }
+p{
+        color: #e8e8e8;
+    font-size: 12px !important;
+    text-align: center;
+    font-weight: normal;
+}
+
+}

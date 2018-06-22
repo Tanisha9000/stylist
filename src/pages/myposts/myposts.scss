@@ -1,0 +1,102 @@
+page-myposts {
+
+    .headinghome{
+        text-align: center;
+        font-size: 20px;
+        margin: 0 0 11px 0;
+    }
+
+    .main_home_box {
+        width:  100%;
+        float:  left;
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 4px 9px 0px #e6dada;
+        box-shadow: 0px 4px 9px 0px #e6dada;
+        margin-bottom: 12px;
+    }
+    .filter{
+        transform: rotate(90deg);
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .main_home_box > .list {
+        margin: 0;
+    }
+
+    .main_home_box > .list > .item {
+        background: transparent;
+        padding: 0;
+        width:  100%;
+        float: left;
+    }
+
+    .main_home_box > .list > .item ion-thumbnail {
+        margin: 0;
+        width: 85px;
+        height:  75px;
+        border-radius:  5px;
+        overflow: hidden;
+    }
+
+    .main_home_box > .list > .item ion-thumbnail img {
+        width:100%;
+        height:100%;
+    }
+
+    .main_home_box > .list > .item .item-inner {
+        padding: 0px 0px 0px 10px;
+    }
+    .main_home_box > .list > .item .item-inner .label {
+        margin:0px 8px 0px 0;
+    }
+    .main_home_box h2 {
+        @include heading1;
+        margin-bottom: 5px;
+        position: relative;
+        padding-right: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+        span{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: fit-content;
+            bottom: 0;
+            height: fit-content;
+            margin: auto;
+            
+            .icon{
+                font-size: 18px;
+                padding: 0 5px;
+            }
+        }
+    }
+    .main_home_box p, .main_home_box span {
+        width: 100%;
+        font-size: 12px !important;
+        font-weight: normal;
+        text-transform: capitalize;
+        white-space: normal;
+    }
+    .message{
+        text-align: center;
+        width: 100%;
+        float: left;
+        font-size: 17px !important;
+        color: #7d7b7b;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: fit-content;
+        padding: 0 16px;
+    }
+
+
+}

@@ -1,0 +1,112 @@
+page-apply {
+	form {
+        width:  100%;
+        float: left;
+ 
+        .preference{
+          padding-left: 10px;
+        	width: 100%;
+                margin:0;
+                padding-top: 8px;
+		float: left;
+		ion-item{
+			width: auto;
+			float:left;
+			ion-label{
+				font-size: 13px;
+
+margin: 0;
+			}
+		}
+
+        	h3{
+                   margin: 10px 0;
+        color: #b3aeae;
+		font-size: 13px;
+		text-align: center;
+        
+        text-transform: capitalize;
+        	}
+    .item-inner{
+    	border-bottom: 0px;
+    }
+    ion-checkbox{
+    	margin: 0 4px 0px 0 !important;
+
+    	 .checkbox-icon{
+    	 	border-radius: 4px;
+	position: relative;
+	width: 15px;
+	height: 15px;
+	border-width: 1px;
+	background-color: #fff;
+	.checkbox-inner {
+    border-color: #6b6767;
+    left: 5px;
+    top: 1px; 
+
+		}
+    	 }
+    	
+    }
+      .others{
+        input{
+            
+                border-bottom: 1px solid #cec2c2;
+                padding-bottom: 4px;
+                margin: 0 !important;
+                padding-left: 10px;
+        }
+            }
+    }
+
+    .datetime-text{
+            font-size: 13px;
+    color: #5e6d78;
+    padding-left: 10px;
+    }
+
+}
+  form > .list {
+         margin-bottom: 25px;
+         width:  100%;
+         float: left;
+        }
+    
+     form > .list > .item {
+        border-top: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    
+     form > .list > .item > .item-inner {
+        padding: 0;
+    }
+    
+     form > .list > .item > .item-inner .label {
+        text-transform: capitalize;
+        color: #b7b7b7;
+        padding: 0 10px;
+    }
+   
+    .main_btn {
+        width: 55%;
+        height: 35px;
+        margin: 0 auto 15px;
+        float: none;
+        display: block;
+        background: #3FE0D0;
+        text-transform: capitalize;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .list > .item-block:first-child{
+    border-top: 0px;
+
+    ion-input{
+    position: relative;
+    }
+}
+
+}

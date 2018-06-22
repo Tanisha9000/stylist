@@ -1,0 +1,106 @@
+<ion-header class="header_color">
+    <ion-navbar hideBackButton>
+        <button ion-button menuToggle style="display:block !important;">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{homee}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" class="filter" (click)="filter_go()">
+                <ion-icon ios="ios-options" md="md-options"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+        <ion-refresher (ionRefresh)="doRefresh($event)">
+                <ion-refresher-content
+                  pullingIcon="arrow-dropdown"
+                  pullingText="Pull to refresh"
+                  refreshingSpinner="circles"
+                  refreshingText="Refreshing...">
+                </ion-refresher-content>
+        </ion-refresher>
+     <!--<div class="headinghome">{{homee}}</div>-->
+    <div>
+     
+    <div class="main_home_box" *ngFor = "let data of allsalons;let i = index">
+        
+        <ion-list>
+              
+            <ion-item no-lines (click)="postdetail_go(data.restdata.id,i,data.restdata.jobapplies)">
+                <ion-thumbnail item-start>
+                    <img [src]="data.url">
+                </ion-thumbnail>
+                <h2>{{data.restdata.salon.name}}</h2>
+                <p>Location: <span>{{data.restdata.location}}</span></p>
+                <p>Date: <span>{{data.created}}</span></p>
+                <p>Exp: 
+                    <span *ngIf="data.restdata.experience">{{data.restdata.experience}} years</span>
+                    <span *ngIf="!data.restdata.experience"> No Info</span>
+                </p>
+                <p *ngIf="data.restdata.jobapplies.length != 0"> 
+                    You have applied for this job.
+                </p>
+            </ion-item>
+        </ion-list>    
+    </div>
+        </div>
+    <div>
+    <div class="main_home_box" *ngFor = "let item of allstylists">
+        <ion-list>
+            <ion-item no-lines (click)="detail(item.restData.id)">
+                <ion-thumbnail item-start>
+                    <img [src]="item.image">
+                </ion-thumbnail>
+                <h2>{{item.restData.name}}</h2>
+                <p>Location: 
+                    <span *ngIf = 'item.restData.user_detail[0].location_prefrence'>{{item.restData.user_detail[0].location_prefrence}}</span>
+                    <span *ngIf = '!item.restData.user_detail[0].location_prefrence'>No info</span>
+                </p>
+                <p>Date: <span>{{item.created}}</span></p>
+                <p *ngIf = 'item.restData.user_detail[0].work_experince'>
+                    Exp: <span>{{item.restData.user_detail[0].work_experince}} years</span></p>
+                <p *ngIf = '!item.restData.user_detail[0].work_experince'>
+                    Exp: <span> No info </span></p>
+            </ion-item>
+        </ion-list>    
+    </div>
+    <div class="main_home_box" *ngFor = "let item of alldata">
+        <ion-list *ngIf="role == 'stylist'">
+            <ion-item no-lines (click)="detail(item.restData.id)">
+                <ion-thumbnail item-start>
+                    <img [src]="item.url">
+                </ion-thumbnail>
+                <h2>{{item.restData.name}}</h2>
+                <p>Email: <span>{{item.restData.email}}</span>
+                <p>Location: 
+                    <span *ngIf = 'item.restData.user_detail[0].location_prefrence'>{{item.restData.user_detail[0].location_prefrence}}</span>
+                    <span *ngIf = '!item.restData.user_detail[0].location_prefrence'>No info</span>
+                </p>
+                <p>Date: <span>{{item.created}}</span></p>
+                <p *ngIf="item.restData.user_detail[0].work_experince" >Exp: <span>{{item.restData.user_detail[0].work_experince}} years</span></p>
+                <p *ngIf="!item.restData.user_detail[0].work_experince">Exp: <span> No info </span></p>
+            </ion-item>
+        </ion-list>  
+        <ion-list *ngIf="role == 'salon'">
+                <ion-item no-lines (click)="detail(item.restData.id)">
+                    <ion-thumbnail item-start>
+                        <img [src]="item.url">
+                    </ion-thumbnail>
+                    <h2>{{item.restData.name}}</h2>
+                    <p>Email: <span>{{item.restData.email}}</span>
+                    <p>Location: 
+                        <span *ngIf = 'item.restData.user_detail[0].location_prefrence'>{{item.restData.user_detail[0].location_prefrence}}</span>
+                        <span *ngIf = '!item.restData.user_detail[0].location_prefrence'>No info</span>
+                    </p>
+                    <p>Date: <span>{{item.created}}</span></p>
+                     <p *ngIf="item.restData.user_detail[0].work_experince" >Exp: <span>{{item.restData.user_detail[0].work_experince}} years</span></p>
+                <p *ngIf="!item.restData.user_detail[0].work_experince">Exp: <span> No info </span></p>
+           
+                </ion-item>
+            </ion-list>   
+    </div>
+        
+</div>
+</ion-content>

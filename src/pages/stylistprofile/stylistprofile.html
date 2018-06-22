@@ -1,0 +1,93 @@
+<!--
+  Generated template for the StylistprofilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header_color">
+
+    <ion-navbar>
+        <ion-title>profile detail</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <div class="post_detail">
+        <div class="img_box">
+            <img [src]="vendorimage">
+        </div>
+        <h2>Applied For:</h2>
+        <ul>
+            <li><span>Selected Position:</span><p>{{position}}</p></li>
+            <li>Pay Type:<p>{{paytype}}</p></li>
+            <li>Start Date:<p>{{startdate}}</p></li>
+            <!--<li>Availability:<p>{{avail}}</p></li>-->
+            <li>Other Info:<p>{{otherinfo}}</p></li>
+        </ul>
+        <h2 style="margin-top: 0;">Applicant Details:</h2>
+        <ul>
+            <li>Applicant name:<p>{{ownername}}</p></li>
+            <li>Work Experience:<p>{{workexp}}</p></li>
+            <li>Location:<p>{{location}}</p></li> 
+            <li>Skills:<p>{{skills}}</p></li>
+            <!--<li>Language:<p>English</p></li>-->
+            <li>Licensed:<p>{{licensed}}</p></li>
+            <li *ngIf="license_details.licence_state" >License State:<p>{{license_details.licence_state}}</p></li>
+            <li *ngIf="license_details.licence_type">License Type:<p>{{license_details.licence_type}}</p></li>
+            <li *ngIf="license_details.licence_number">License Number:<p>{{license_details.licence_number}}</p></li>
+
+            <li>Pay Type: <p class="line" *ngFor="let item of paypref; let i = index">{{item}}
+             <label *ngIf="paypref.length != (i+1)">, </label>
+            </p></li>
+        </ul>
+        <ion-list class="accordion">
+                <ion-list-header (click)="toggleData(other)" class="contacthead" >   
+                    About: <ion-icon color="primary" item-right [name]="other?.icon1"></ion-icon>
+                    <ion-icon *ngIf="ohho == 0" color="primary" item-right name=ios-arrow-down></ion-icon>
+                </ion-list-header>
+                <ion-item padding *ngIf="other?.showDetails1">
+                          <div>
+                        <p>{{aboutus}}</p>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list class="accordion" no-margin>
+                <ion-list-header class="contacthead" (click)="toggleDetails(data)">   
+                    Contact Us:  <ion-icon color="primary" item-right [name]="data.icon"></ion-icon>
+                    <ion-icon *ngIf="qqiit == 0" color="primary" item-right name=ios-arrow-down></ion-icon>
+                </ion-list-header>
+                <ion-item padding  *ngIf="data.showDetails">
+                          <div>
+                        <ul style="margin: 0;" >
+                            <li>Phone Number:<p>{{phone}}</p></li>
+                            <li>Email:<p>{{email}}</p></li>
+
+                            <!--          <li>Rate Stylist:
+                                      <div class="stars">
+                                      <ion-icon ios="ios-star" class="yellow" md="md-star"></ion-icon>
+                                      <ion-icon ios="ios-star" class="yellow" md="md-star"></ion-icon>
+                                      <ion-icon ios="ios-star" class="yellow" md="md-star"></ion-icon>
+                                      <ion-icon ios="ios-star"  class="yellow" md="md-star"></ion-icon>
+                                      <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                                  </div>
+                                  </li> -->
+                        </ul>
+                    </div>
+                </ion-item>
+            </ion-list> 
+
+
+        <button ion-button class="main_btn" (click)="workhistory()">Work History</button>
+        <button ion-button class="main_btn" [hidden]="review_status ==2" (click)="accept()">Accept application</button>
+        <button ion-button class="main_btn" [hidden]="review_status !=2" disabled >Accepted already</button>
+    </div>
+</ion-content> 
+
+<!--<ion-footer class="footer" >
+    <ion-toolbar  >s
+      <ion-title ><span (click)="apply()">Apply</span></ion-title>
+    </ion-toolbar>
+  </ion-footer>-->
